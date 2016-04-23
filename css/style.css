@@ -1,0 +1,185 @@
+.stores-bc .mui-scroll {
+	font-size: 12px;
+	color: #999999;
+}
+
+.mui-content a {
+	color: #000000;
+}
+
+p {
+	font-size: 12px;
+	margin-bottom: 0;
+}
+
+b {
+	font-size: 12px;
+}
+
+.downIcon:after {
+	content: '\e581';
+	position: static;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.iconfont {
+	color: #007AFF;
+}
+.stores-bc .mui-slider-group.top47{
+	top:47px;
+}
+.stores-bc .mui-slider-indicator{
+	height: 45px;
+}
+.stores-bc .mui-slider-indicator a{
+	line-height: 45px;
+}
+.mui-bar {
+	background-color: #007aff;
+}
+
+.mui-bar button {
+	border: 1px solid #FFFFFF;
+}
+
+.mui-bar .mui-action-back {
+	color: #FFFFFF;
+}
+
+.mui-title {
+	color: #FFFFFF;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	color: #007aff;
+	border-bottom: 2px solid #007aff;
+	background: 0 0;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+	color: #999999;
+}
+
+.flexCon {
+	display: -webkit-flex;
+	display: flex;
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	-ms-flex-direction: row;
+	-o-flex-direction: row;
+	flex-direction: row;
+	color: #000000;
+}
+
+.flexCon p {
+	margin: 0;
+	display: inline-block;
+}
+
+.flexOne {
+	-webkit-flex: 1;
+	flex: 1;
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+.fontEll {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+}
+
+.backFFF {
+	background-color: #FFFFFF;
+}
+
+.padding10 {
+	padding: 10px;
+}
+
+.fontOrange {
+	color: #EC6C13;
+}
+
+.detail-name {
+	padding: 5px 10px;
+}
+
+.loc-load {
+	font-size: 22px;
+	color: #EC6C13;
+}
+
+.loc-load.amt {
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	animation: load 1s linear infinite;
+	-moz-animation: load 1s linear infinite;
+	-webkit-animation: load 1s linear infinite;
+	-o-animation: load 1s linear infinite;
+}
+
+@keyframes load {
+	from {
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes load {
+	from {
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+.listNo {
+	text-align: center;
+	font-size: 14px;
+	color: #999999;
+	padding: 20px 0;
+}
+
+.qrcode {
+	width: 200px;
+    height: 200px;
+    position: absolute;
+    margin-left: -100px;
+    left: 50%;
+}
+.qrcode canvas{
+	width: 200px;
+    height: 200px;
+}
+.qrCon{
+	height: 200px;
+    position: relative;
+}
+.flexCon .nowlocationbar{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	display:none ;
+	background-color: #fff;
+	z-index: 1;
+}

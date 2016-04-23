@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>就近门店列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/iconfont.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=oGqg1KTzgZ2FVs4dhxGroj8X"></script>
+		<!-- <script src="js/jquery-1.8.3.js"></script> -->
+		<!-- <script src="js/jquery.qrcode.min.js"></script> -->
+	</head>
+
+	<body class="stores-bc" >
+		<div class="mui-content" id='storeandqrcode'>
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+						附近门店
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						我的订单
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+				<div class="mui-slider-group top47">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="detail-name">我的位置</div>
+								<div class="flexCon backFFF padding10">
+									<a href="#bottomPop">
+										<p class="nowlocationbar">
+											<span class="mui-icon iconfont icon-ditu1 fontOrange"></span>当前位置
+											<span class="mui-navigate-right downIcon"></span>
+										</p>
+										<p class="orderlocationbar">
+											<span class="mui-icon iconfont icon-xiangzi1"></span> 订单收货地址
+										</p>
+										<span class="mui-navigate-right downIcon"></span>
+									</a>
+									<div class="flexOne fontEll orderlocationbar" id="orderAddress">
+									</div>
+									<!-- <span class="mui-icon mui-icon-reload loc-load amt"></span> -->
+								</div>
+								<div class="detail-name">附近门店</div>
+								<ul class="mui-table-view" id="storelist">
+									<!-- <li class="mui-table-view-cell">
+										<div class="flexCon">
+											<div class="flexOne">门店名称</div>
+											<span class="fontOrange">
+												<span class="mui-icon iconfont icon-ditu1 fontOrange"></span>
+												0.6km
+											</span>
+										</div>
+										<p class="fontEll">门店详细地址门店详细地址门店详细地址门店详细地址门店详细地址门店详细地址门店详细地址</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="flexCon">
+											<div class="flexOne">门店名称</div>
+											<span class="fontOrange">
+												<span class="mui-icon iconfont icon-ditu1 fontOrange"></span>
+												0.6km
+											</span>
+										</div>
+										<p class="fontEll">门店详细地址门店详细地址门店详细地址门店详细地址门店详细地址门店详细地址门店详细地址</p>
+									</li> -->
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<p class="listNo">订单编号：<span  id="listNo"></span></p>
+								<div class="qrCon">
+									<div class="qrcode" id="output"></div>
+								</div>
+
+								<p class="listNo">此二维码用于门店快速找到您的订单</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mui-content" id="onlyqrcode">
+			<div class="mui-slider mui-fullscreen">
+				<div  class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item2mobile">
+						我的订单
+					</a>
+				</div>
+				<div class="mui-slider-group top47">
+					<div  class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<p class="listNo">订单编号：<span  id="listNo"></span></p>
+								<div class="qrCon">
+									<div class="qrcode" id="output"></div>
+								</div>
+								<p class="listNo">此二维码用于门店快速找到您的订单</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="bottomPop" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell"  id="nowlocation">
+					<a href="#bottomPop">
+						<p>
+							<span class="mui-icon iconfont icon-ditu1 fontOrange"></span>当前位置
+						</p>
+					</a>
+
+				</li>
+				<li class="mui-table-view-cell"  id="orderlocation">
+					<a href="#bottomPop">
+						<p>
+							<span class="mui-icon iconfont icon-xiangzi1"></span> 订单收货地址
+						</p>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#bottomPop"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<div id="allmap"></div>
+		<script src="js/mui.min.js"></script>
+		<!-- <script src="dist/index.js"></script> -->
+		<script src="src/bundle.js"></script>
+		<script>
+			// window.onload = function() {
+			// 	var text1 = "aa";
+			// 	$('#output').qrcode(text1);
+			// }
+		</script>
+	</body>
+
+</html>
